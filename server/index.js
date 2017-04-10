@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 
 passport.use(
     new GoogleStrategy({
-        clientID:  '634338731171-p1fa27i543iqh7bumg3git2r5iu15cug.apps.googleusercontent.com',
+        clientID:  '444740250195-l1ffmpv38gb4jebtladcmnlu6ab78fcn.apps.googleusercontent.com',
         clientSecret: secret,
         callbackURL: `${config.ROOT}/auth/google/callback`
     },
@@ -178,7 +178,8 @@ app.post('/questions', jsonParser, (req, res) => {
 let server;
 function runServer(host, port) {
     return new Promise((resolve, reject) => {
-        mongoose.connect('mongodb://localhost/SpacedRepetition', function(err) {
+        
+        mongoose.connect(config.DB_ROOT, function(err) {
             if(err) {
                 return reject(err);
             }
