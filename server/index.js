@@ -4,6 +4,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+mongoose.Promise = global.Promise;
 const { User, Question } = require('./models');
 const config = require('./config');
 //const secret = require('./secret');
@@ -198,14 +199,17 @@ function runServer(host, port) {
 }
 
 function closeServer() {
-    return new Promise((resolve, reject) => {
-        server.close(err => {
-            if (err) {
-                return reject(err);
-            }
-            resolve();
-        });
-    });
+    return mongoose.disconnect().then(() => {
+     return new Promise((resolve, reject) => {
+       console.log('Closing server');
+       server.close(err => {
+           if (err) {
+               return reject(err);
+           }
+           resolve();
+       });
+     });
+  });
 }
 
 // if (require.main === module) {
