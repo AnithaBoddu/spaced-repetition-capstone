@@ -208,10 +208,10 @@ function closeServer() {
     });
 }
 
-if (require.main === module) {
-    console.log("Starting server.... ")
-     runServer(config.HOST, config.PORT);
-}
+// if (require.main === module) {
+//     console.log("Starting server.... ")
+//      runServer(config.HOST, config.PORT);
+// }
 
 module.exports = {
     app, runServer, closeServer
