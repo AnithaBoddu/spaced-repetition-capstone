@@ -7,7 +7,9 @@ const bodyParser = require('body-parser');
 const { User, Question } = require('./models');
 const config = require('./config');
 //const secret = require('./secret');
+require('dotenv').config();
 const secret = process.env.SECRET;
+
 
 const app = express();
 mongoose.Promise = global.Promise;
@@ -205,7 +207,7 @@ function closeServer() {
 
 if (require.main === module) {
     console.log("Starting server.... ")
-    //runServer(config.HOST, config.PORT);
+     runServer(config.HOST, config.PORT);
 }
 
 module.exports = {
