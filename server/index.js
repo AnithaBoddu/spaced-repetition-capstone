@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const { User, Question } = require('./models');
 const config = require('./config');
 //const secret = require('./secret');
-require('dotenv').config();
+//require('dotenv').config();
 const secret = process.env.SECRET;
 
 
