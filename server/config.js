@@ -34,7 +34,7 @@
 
 
 module.exports = {
-  DB_URL: process.env.DB_ROOT || global.DB_ROOT ,
+  DB_ROOT: process.env.DB_ROOT || global.DB_ROOT ,
   DB_LOCALHOST: process.env.TEST_DATABASE_URL || '//mongodb://localhost/SpacedRepetition',
   PORT: process.env.PORT || 3001,
   CLIENT_HOST: process.env.CLIENT_HOST || 'localhost',
