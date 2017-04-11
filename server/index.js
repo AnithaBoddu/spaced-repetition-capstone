@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const { User, Question } = require('./models');
 const config = require('./config');
 //const secret = require('./secret');
-//require('dotenv').config();
+require('dotenv').config();
 const secret = process.env.SECRET;
 
 
@@ -182,7 +182,7 @@ let server;
 function runServer(host, port) {
     return new Promise((resolve, reject) => {
         
-        mongoose.connect(config.DB_ROOT, function(err) {
+        mongoose.connect(process.env.DB_ROOT, function(err) {
             if(err) {
                 return reject(err);
             }
@@ -207,7 +207,7 @@ function closeServer() {
 
 if (require.main === module) {
     console.log("Starting server.... ")
-     //runServer(config.HOST, config.PORT);
+     runServer(config.HOST, config.PORT);
 }
 
 module.exports = {

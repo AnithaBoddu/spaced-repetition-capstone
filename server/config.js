@@ -9,12 +9,12 @@ const ROOT = `http://${HOST}:${PORT}`;
 // const PROJECT = '/spaced-repetition-capstone'
 // const ROOT = `mongodb://${HOST}:${PORT}${PROJECT}`;
 
-console.log(ROOT);
+
 
 const CLIENT_HOST = process.env.CLIENT_HOST || 'localhost';
 const CLIENT_PORT = process.env.CLIENT_PORT || 3000;
-const CLIENT_ROOT = `http://${CLIENT_HOST}:${CLIENT_PORT}`;
-const DB_ROOT = 'mongodb://latin:latin@ds139470.mlab.com:39470/spaced_repetition';
+const CLIENT_ROOT = process.env.CLIENT_HOST;
+
 const DB_LOCALHOST = '//mongodb://localhost/SpacedRepetition';
 
 
@@ -25,7 +25,7 @@ module.exports = {
     CLIENT_HOST,
     CLIENT_PORT,
     CLIENT_ROOT,
-    DB_LOCALHOST,
-    DB_ROOT
+    DB_LOCALHOST
+   
 };
 
