@@ -187,7 +187,7 @@ function runServer(host, port) {
         })
         server = app.listen(port, host, () => {
             console.log(`Server running on ${host}:${port}`);
-            //resolve();
+            resolve();
         }).on('error', reject);
     });
 }
@@ -205,7 +205,7 @@ function closeServer() {
 
 if (require.main === module) {
     console.log("Starting server.... ")
-    runServer(config.HOST, config.PORT);
+    //runServer(config.HOST, config.PORT);
 }
 
 module.exports = {
