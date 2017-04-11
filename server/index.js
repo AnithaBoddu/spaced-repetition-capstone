@@ -204,7 +204,7 @@ function closeServer() {
 }
 
 if (require.main === module) {
-    runServer(config.HOST, config.PORT);
+    runServer(config.HOST, process.env.PORT || config.PORT);
 }
 
 module.exports = {
