@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
 passport.use(
     new GoogleStrategy({
         clientID:  '444740250195-l1ffmpv38gb4jebtladcmnlu6ab78fcn.apps.googleusercontent.com',
-        clientSecret: secret,
+        clientSecret: config.SECRET,
         callbackURL: `${config.ROOT}/auth/google/callback`
     },
     (accessToken, refreshToken, profile, cb) => {
@@ -182,7 +182,7 @@ let server;
 function runServer(host, port) {
     return new Promise((resolve, reject) => {
         
-        mongoose.connect(process.env.DB_ROOT, function(err) {
+        mongoose.connect(config.DB_ROOT, function(err) {
             if(err) {
                 return reject(err);
             }
