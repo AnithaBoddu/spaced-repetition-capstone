@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { User, Question } = require('./models');
 const config = require('./config');
-const secret = require('./secret');
+//const secret = require('./secret');
+const secret = process.env.SECRET;
 
 const app = express();
 mongoose.Promise = global.Promise;
