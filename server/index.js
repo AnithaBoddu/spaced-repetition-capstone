@@ -204,9 +204,8 @@ function closeServer() {
 }
 
 if (require.main === module) {
-    console.log("Process env port = " + process.env.PORT )
-    console.log("Config port = " + config.PORT)
-    runServer(config.HOST, process.env.PORT || config.PORT);
+    console.log("Starting server.... ")
+    runServer(config.HOST, config.PORT);
 }
 
 module.exports = {
