@@ -1,5 +1,5 @@
 const HOST = process.env.SERVER_HOST || process.env.HOST || 'localhost';
-const PORT = process.env.SERVER_PORT || process.env.PORT || 57539;
+const PORT = process.env.SERVER_PORT || process.env.PORT || 8080;
 const ROOT = `https://${HOST}:${PORT}`;
 
 
@@ -19,6 +19,7 @@ const DB_LOCALHOST = '//mongodb://localhost/SpacedRepetition';
 
 
 module.exports = {
+    
     HOST,
     PORT,
     ROOT,

@@ -190,7 +190,10 @@ function runServer(host, port) {
         server = app.listen(port, host, () => {
             console.log(`Server running on ${host}:${port}`);
             resolve();
-        }).on('error', reject);
+        }).on('error', err => {
+        mongoose.disconnect();
+        reject(err);
+      })
     });
 }
 
